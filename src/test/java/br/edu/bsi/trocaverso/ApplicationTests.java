@@ -1,4 +1,4 @@
-package br.edu.bsi.sistemadetrocas.SistemaTrocas;
+package br.edu.bsi.trocaverso;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

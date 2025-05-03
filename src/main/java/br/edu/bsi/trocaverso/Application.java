@@ -1,4 +1,4 @@
-package br.edu.bsi.sistemadetrocas.SistemaTrocas;
+package br.edu.bsi.trocaverso;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package br.edu.bsi.sistemadetrocas.SistemaTrocas.model;
+package br.edu.bsi.trocaverso.model;
 
 import java.time.LocalDate;
 
