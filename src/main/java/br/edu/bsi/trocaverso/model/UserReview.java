@@ -8,29 +8,29 @@ public class UserReview extends GenericModel {
 
     @ManyToOne
     @JoinColumn(name = "reviewer_id", nullable = false)
-    private User reviewer;
+    private UserProfile reviewer;
 
     @ManyToOne
     @JoinColumn(name = "reviewee_id", nullable = false)
-    private User reviewee;
+    private UserProfile reviewee;
 
     @Enumerated
     @Column(name = "evaluation", nullable = false)
     private EvaluationReview evaluation;
 
-    public User getReviewer() {
+    public UserProfile getReviewer() {
         return reviewer;
     }
 
-    public void setReviewer(User reviewer) {
+    public void setReviewer(UserProfile reviewer) {
         this.reviewer = reviewer;
     }
 
-    public User getReviewee() {
+    public UserProfile getReviewee() {
         return reviewee;
     }
 
-    public void setReviewee(User reviewee) {
+    public void setReviewee(UserProfile reviewee) {
         this.reviewee = reviewee;
     }
 

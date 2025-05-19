@@ -2,6 +2,7 @@ package br.edu.bsi.trocaverso.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,14 +16,14 @@ public class UserProfile extends GenericModel {
     @Column(name = "profile_bio", nullable = false)
     private String profileBio;
 
-    @Column(name = "profile_picture_path", nullable = false)
+    @Column(name = "profile_picture_path")
     private String profilePicturePath;
 
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    private List<Item> itemsForTrade;
+    private List<Item> itemsForTrade = new ArrayList<>();
 
     @OneToMany(mappedBy = "provider", cascade = CascadeType.ALL)
-    private List<ServiceOffer> servicesForTrade;
+    private List<ServiceOffer> servicesForTrade = new ArrayList<>();
 
     public User getUserAccount() {
         return userAccount;

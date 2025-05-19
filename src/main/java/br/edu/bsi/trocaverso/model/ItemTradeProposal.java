@@ -9,11 +9,11 @@ public class ItemTradeProposal extends GenericModel{
 
     @ManyToOne
     @JoinColumn(name = "proposer_id")
-    private User proposer;
+    private UserProfile proposer;
 
     @ManyToOne
     @JoinColumn(name = "receiver_id")
-    private User receiver;
+    private UserProfile receiver;
 
     @ManyToOne
     @JoinColumn(name = "item_offered_id")
@@ -30,19 +30,19 @@ public class ItemTradeProposal extends GenericModel{
     @Enumerated(EnumType.STRING)
     private TradeProposalStatus status;
 
-    public User getProposer() {
+    public UserProfile getProposer() {
         return proposer;
     }
 
-    public void setProposer(User proposer) {
+    public void setProposer(UserProfile proposer) {
         this.proposer = proposer;
     }
 
-    public User getReceiver() {
+    public UserProfile getReceiver() {
         return receiver;
     }
 
-    public void setReceiver(User receiver) {
+    public void setReceiver(UserProfile receiver) {
         this.receiver = receiver;
     }
 

@@ -5,7 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
 
-public interface TradeItemRepository extends JpaRepository<Item, UUID> {
+public interface ItemRepository extends JpaRepository<Item, UUID> {
     // Custom query methods can be defined here if needed
-    // For example, findByName(String name) or findByCategory(String category)
 }

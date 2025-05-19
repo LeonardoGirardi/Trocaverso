@@ -9,11 +9,11 @@ public class PrivateMessage extends GenericModel{
 
     @OneToOne
     @JoinColumn(name = "message_sender", nullable = false)
-    private User sender;
+    private UserProfile sender;
 
     @OneToOne
     @JoinColumn(name = "message_receiver", nullable = false)
-    private User receiver;
+    private UserProfile receiver;
 
     @Column(name = "message_content", nullable = false)
     private String content;
@@ -21,19 +21,19 @@ public class PrivateMessage extends GenericModel{
     @Column(name = "message_date", nullable = false)
     private LocalDate date;
 
-    public User getSender() {
+    public UserProfile getSender() {
         return sender;
     }
 
-    public void setSender(User sender) {
+    public void setSender(UserProfile sender) {
         this.sender = sender;
     }
 
-    public User getReceiver() {
+    public UserProfile getReceiver() {
         return receiver;
     }
 
-    public void setReceiver(User receiver) {
+    public void setReceiver(UserProfile receiver) {
         this.receiver = receiver;
     }
 

@@ -15,9 +15,20 @@ public class User extends GenericModel{
     @Column(name = "user_password", nullable = false)
     private String userPassword;
 
+    @OneToOne(mappedBy = "userAccount")
+    private UserProfile profile;
+
     @OneToOne
     @JoinColumn(name = "user_location", nullable = false)
     private Location location;
+
+    public UserProfile getProfile() {
+        return profile;
+    }
+
+    public void setProfile(UserProfile profile) {
+        this.profile = profile;
+    }
 
     public String getUserName() {
         return userName;
