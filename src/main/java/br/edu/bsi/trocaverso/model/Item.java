@@ -14,8 +14,7 @@ public class Item extends GenericModel {
 
     @Column(name = "item_picture_path")
     private String itemPicturePath;
-
-
+    
     @ManyToOne
     @JoinColumn(name = "item_owner", nullable = false)
     private UserProfile owner;

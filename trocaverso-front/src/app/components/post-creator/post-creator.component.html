@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="post-creator">
+    <div class="profile-pic">{{ userAvatar }}</div>
+    <input
+      type="text"
+      class="post-input"
+      [placeholder]="placeholderText"
+      (click)="onPostInputClick()"
+      readonly
+    >
+  </div>
+  <div class="post-actions">
+    <button
+      class="post-action"
+      *ngFor="let action of postActions; trackBy: trackByAction"
+      (click)="onActionClick(action.action)"
+    >
+      {{ action.icon }} {{ action.text }}
+    </button>
+  </div>
+</div>
+

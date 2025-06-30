@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/sistematrocas
+    url: jdbc:postgresql://localhost:5432/trocaverso_db
     username: postgres
-    password: postgres
+    password: root
     driver-class-name: org.postgresql.Driver
     hikari:
       pool-name: HikariPostgresDev

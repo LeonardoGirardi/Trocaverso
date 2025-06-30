@@ -1,0 +1,49 @@
+<div class="feed-container">
+  <div
+    class="card feed-item"
+    *ngFor="let item of feedItems; trackBy: trackByFeedItem"
+  >
+    <!-- Feed Header -->
+    <div class="feed-header">
+      <div class="feed-avatar">{{ item.user.avatar }}</div>
+      <div class="feed-info">
+        <h3>{{ item.user.name }}</h3>
+        <div class="feed-time">{{ item.timestamp }}</div>
+      </div>
+    </div>
+
+    <!-- Feed Content -->
+    <div class="feed-content">
+      <div class="feed-text">{{ item.content.text }}</div>
+      <div
+        class="feed-image"
+        *ngIf="item.content.image"
+      >
+        {{ item.content.image }}
+      </div>
+    </div>
+
+    <!-- Feed Actions -->
+    <div class="feed-actions">
+      <!-- Like Button (Special handling) -->
+      <button
+        [class]="getLikeButtonClass(item)"
+        (click)="onFeedAction('like', item)"
+      >
+        {{ getLikeButtonText(item) }}
+        <span class="like-count" *ngIf="item.actions.likes > 0">
+          ({{ item.actions.likes }})
+        </span>
+      </button>
+
+      <!-- Other Actions -->
+      <button
+        class="feed-action"
+        *ngFor="let action of feedActions.slice(1); trackBy: trackByAction"
+        (click)="onFeedAction(action.action, item)"
+      >
+        {{ action.icon }} {{ action.text }}
+      </button>
+    </div>
+  </div>
+</div>

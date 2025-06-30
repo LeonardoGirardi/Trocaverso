@@ -1,0 +1,19 @@
+<!-- src/app/shared/components/sidebar/sidebar.component.html -->
+<aside class="sidebar">
+  <nav class="sidebar-nav">
+    <a
+      *ngFor="let item of sidebarItems"
+      [routerLink]="item.route"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: item.route === '/' }"
+      class="sidebar-item"
+    >
+      <div class="sidebar-icon">{{ item.icon }}</div>
+      <span class="sidebar-label">{{ item.label }}</span>
+      <span *ngIf="item.badge && item.badge > 0" class="sidebar-badge">
+        {{ item.badge }}
+      </span>
+    </a>
+  </nav>
+</aside>
+

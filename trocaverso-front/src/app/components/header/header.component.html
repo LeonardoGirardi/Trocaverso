@@ -1,0 +1,50 @@
+<header class="header">
+  <div class="header-content">
+    <a routerLink="/" class="logo">TrocaVerso</a>
+
+    <div class="search-bar mobile-hidden">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Buscar itens, serviços ou pessoas..."
+        [(ngModel)]="searchQuery"
+        (keyup.enter)="onSearch()"
+      >
+      <button class="search-btn" (click)="onSearch()" *ngIf="searchQuery">
+        🔍
+      </button>
+    </div>
+
+    <div class="nav-icons">
+      <a routerLink="/" class="nav-icon" title="Início" routerLinkActive="active">
+        🏠
+      </a>
+      <a routerLink="/propostas-recebidas" class="nav-icon" title="Propostas" routerLinkActive="active">
+        💬
+        <span class="notification-badge" *ngIf="proposalCount > 0">{{ proposalCount }}</span>
+      </a>
+      <button class="nav-icon" title="Notificações">
+        🔔
+        <span class="notification-badge" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+      </button>
+
+      <div class="profile-dropdown">
+        <div class="profile-pic" (click)="toggleDropdown()">
+          {{ getUserInitials() }}
+        </div>
+        <div class="dropdown-menu" [class.show]="showDropdown">
+          <a routerLink="/perfil" class="dropdown-item">
+            👤 Meu Perfil
+          </a>
+          <a routerLink="/avaliacoes" class="dropdown-item">
+            ⭐ Minhas Avaliações
+          </a>
+          <div class="dropdown-divider"></div>
+          <button class="dropdown-item" (click)="onLogout()">
+            🚪 Sair
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

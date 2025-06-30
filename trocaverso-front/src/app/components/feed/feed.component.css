@@ -1,0 +1,214 @@
+/* Feed Container */
+.feed-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+/* Feed Item */
+.feed-item {
+  margin-bottom: 0;
+}
+
+/* Feed Header */
+.feed-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.feed-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.feed-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.feed-info h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+  color: #1c1e21;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.feed-time {
+  font-size: 13px;
+  color: #65676b;
+  margin: 0;
+}
+
+/* Feed Content */
+.feed-content {
+  padding: 0 16px 16px;
+}
+
+.feed-text {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  color: #1c1e21;
+  font-size: 15px;
+  word-wrap: break-word;
+}
+
+.feed-image {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+/* Feed Actions */
+.feed-actions {
+  display: flex;
+  gap: 0;
+  padding: 8px 16px;
+  border-top: 1px solid #e4e6ea;
+}
+
+.feed-action {
+  flex: 1;
+  padding: 8px;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.2s, color 0.2s;
+  font-size: 15px;
+  color: #65676b;
+  font-weight: 500;
+  font-family: inherit;
+  min-height: 36px;
+  margin: 0 2px;
+}
+
+.feed-action:hover {
+  background: #f2f2f2;
+}
+
+.feed-action:active {
+  background: #e4e6ea;
+}
+
+/* Liked state */
+.feed-action.liked {
+  color: #1877f2;
+}
+
+.feed-action.liked:hover {
+  background: #e7f3ff;
+}
+
+/* Like count */
+.like-count {
+  font-size: 13px;
+  margin-left: 4px;
+}
+
+/* Different avatar gradients for variety */
+.feed-item:nth-child(1) .feed-avatar {
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+}
+
+.feed-item:nth-child(2) .feed-avatar {
+  background: linear-gradient(45deg, #a8edea, #fed6e3);
+}
+
+.feed-item:nth-child(3) .feed-avatar {
+  background: linear-gradient(45deg, #d299c2, #fef9d7);
+}
+
+.feed-item:nth-child(4) .feed-avatar {
+  background: linear-gradient(45deg, #89f7fe, #66a6ff);
+}
+
+.feed-item:nth-child(n+5) .feed-avatar {
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feed-container {
+    gap: 16px;
+  }
+
+  .feed-header {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .feed-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .feed-info h3 {
+    font-size: 14px;
+  }
+
+  .feed-time {
+    font-size: 12px;
+  }
+
+  .feed-content {
+    padding: 0 12px 12px;
+  }
+
+  .feed-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .feed-image {
+    height: 250px;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .feed-actions {
+    padding: 6px 12px;
+    gap: 0;
+  }
+
+  .feed-action {
+    font-size: 14px;
+    padding: 6px;
+    min-height: 32px;
+    margin: 0 1px;
+  }
+}

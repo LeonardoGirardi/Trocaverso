@@ -1,0 +1,29 @@
+<aside class="right-sidebar">
+  <!-- Sugestões -->
+  <div class="suggestions">
+    <h3>Sugestões para você</h3>
+
+    <div class="suggestion-item" *ngFor="let suggestion of suggestions">
+      <div class="suggestion-avatar">{{ suggestion.avatar }}</div>
+      <div class="suggestion-info">
+        <div class="suggestion-name">{{ suggestion.name }}</div>
+        <div class="suggestion-desc">{{ suggestion.description }}</div>
+      </div>
+      <button class="suggestion-btn">Seguir</button>
+    </div>
+  </div>
+
+  <!-- Atividade Recente -->
+  <div class="suggestions">
+    <h3>Atividade Recente</h3>
+
+    <div class="suggestion-item" *ngFor="let activity of recentActivities">
+      <div class="suggestion-avatar">{{ activity.avatar }}</div>
+      <div class="suggestion-info">
+        <div class="suggestion-name">{{ activity.name }}</div>
+        <div class="suggestion-desc">{{ activity.description }}</div>
+      </div>
+      <span class="status-badge">{{ activity.status }}</span>
+    </div>
+  </div>
+</aside>
